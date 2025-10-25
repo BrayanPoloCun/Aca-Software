@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaluación de Calidad del Software</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg px-4">
+    <a class="navbar-brand" href="#">SoftQuali+</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a href="#evaluacion" class="nav-link">Evaluación</a></li>
+        <li class="nav-item"><a href="#historial" class="nav-link">Historial</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="inicio" class="hero">
+    <h1>Evaluación de Calidad del Software</h1>
+    <p class="lead mt-3">Analiza y mide la calidad de tus aplicaciones según criterios de ingeniería de software reconocidos internacionalmente.</p>
+  </section>
+
+  <section class="container mt-5">
+    <h2 class="section-title">Componentes Principales</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5 class="text-primary">Usabilidad</h5>
+          <p>Evalúa la facilidad de uso e interacción del usuario con el sistema. Se consideran aspectos como accesibilidad, diseño y experiencia del usuario.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5 class="text-primary">Fiabilidad</h5>
+          <p>Mide la capacidad del software de mantener un desempeño estable bajo distintas condiciones y durante un tiempo prolongado.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5 class="text-primary">Mantenibilidad</h5>
+          <p>Determina la facilidad con que el software puede ser actualizado, corregido o mejorado sin comprometer su funcionalidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mt-5">
+    <h2 class="section-title">Método de Evaluación y Fórmula</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card p-4">
+          <h5 class="text-primary">Método de Evaluación</h5>
+          <p>Se utiliza una escala del 1 al 5 para cada criterio, donde 1 representa deficiencia y 5 excelencia. Cada valor es ponderado para obtener un promedio general.</p>
+          <ul>
+            <li>Recolección de datos mediante calificación individual.</li>
+            <li>Análisis comparativo entre criterios.</li>
+            <li>Visualización con gráficas dinámicas.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-4">
+          <h5 class="text-primary">Fórmula General</h5>
+          <p>El índice de calidad (IC) se obtiene con la siguiente expresión:</p>
+          <div class="text-center fs-5 fw-bold text-success">
+            IC = (ΣCriterios) / N
+          </div>
+          <p class="mt-3">Donde ΣCriterios es la suma de los puntajes de cada criterio evaluado y N es el número total de criterios considerados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="evaluacion" class="container mt-5">
+    <h2 class="section-title">Evaluar Software</h2>
+    <div class="card p-4">
+      <div class="mb-3">
+        <label class="form-label fw-bold">Nombre del Evaluador</label>
+        <input type="text" id="evaluador" class="form-control" placeholder="Ejemplo: Ana Torres">
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold">Nombre de la Aplicación</label>
+        <input type="text" id="nombreApp" class="form-control" placeholder="Ejemplo: Sistema de Control Académico">
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold">Descripción</label>
+        <textarea id="descripcion" class="form-control" rows="2" placeholder="Describe brevemente la aplicación..."></textarea>
+      </div>
+
+      <div id="criterios"></div>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-success w-100" onclick="guardarEvaluacion()">Guardar Evaluación</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="historial" class="container mt-5">
+    <h2 class="section-title">Historial de Evaluaciones</h2>
+    <div class="card p-4">
+      <div id="listaHistorial"></div>
+      <div class="chart-container">
+        <canvas id="grafico"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 SoftQuali+ | Evaluación de Calidad del Software
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
